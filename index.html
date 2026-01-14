@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Monitoring Electrical Engineering</title>
+
+  <!-- Socket.IO -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #f1f4f9;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    header p {
+      margin-top: 6px;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #1e3a8a;
+    }
+
+    .data-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .label {
+      color: #555;
+    }
+
+    .value {
+      font-weight: 600;
+      color: #111;
+    }
+
+    .status-basah {
+      color: #16a34a;
+    }
+
+    .status-kering {
+      color: #dc2626;
+    }
+
+    footer {
+      text-align: center;
+      padding: 18px;
+      font-size: 13px;
+      color: #666;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Dashboard Monitoring Electrical Engineering</h1>
+  <p>Sistem Monitoring Sensor IoT Berbasis ESP32</p>
+</header>
+
+<div class="container">
+
+  <!-- KRISNA -->
+  <div class="card">
+    <div class="card-title">🌡️ Krisna — Sensor DHT</div>
+    <div class="data-row">
+      <span class="label">Suhu</span>
+      <span class="value" id="temp1">-</span>
+    </div>
+    <div class="data-row">
+      <span class="label">Kelembapan</span>
+      <span class="value" id="hum1">-</span>
+    </div>
+  </div>
+
+  <!-- HASNUL -->
+  <div class="card">
+    <div class="card-title">🌱 Hasnul — Soil Monitoring</div>
+    <div class="data-row">
+      <span class="label">Suhu</span>
+      <span class="value" id="tempHasnul">-</span>
+    </div>
+    <div class="data-row">
+      <span class="label">Kelembapan</span>
+      <span class="value" id="humHasnul">-</span>
+    </div>
+    <div class="data-row">
+      <span class="label">Soil Analog</span>
+      <span class="value" id="soilAnalog">-</span>
+    </div>
+    <div class="data-row">
+      <span class="label">Status Tanah</span>
+      <span class="value" id="soilStatus">-</span>
+    </div>
+  </div>
+
+  <!-- ARIF -->
+  <div class="card">
+    <div class="card-title">🌡️ Arif — Suhu Tanah (NTC)</div>
+    <div class="data-row">
+      <span class="label">Suhu NTC</span>
+      <span class="value" id="ntcTemp">-</span>
+    </div>
+  </div>
+
+  <!-- SITA -->
+  <div class="card">
+    <div class="card-title">💧 Sita — Sensor Air</div>
+    <div class="data-row">
+      <span class="label">Suhu</span>
+      <span class="value" id="sitaTemp">-</span>
+    </div>
+    <div class="data-row">
+      <span class="label">Kelembapan</span>
+      <span class="value" id="sitaHum">-</span>
+    </div>
+    <div class="data-row">
+      <span class="label">Water Level</span>
+      <span class="value" id="waterLevel">-</span>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 — Dashboard Monitoring Electrical Engineering | Tugas Akhir Teknik Elektro
+</footer>
+
+</body>
+</html>
